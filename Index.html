@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffdde1;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #ff3366;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .yes {
+            background-color: #ff66b2;
+            color: white;
+        }
+        .yes:hover {
+            background-color: #ff3385;
+        }
+        .no {
+            background-color: #888;
+            color: white;
+        }
+        .no:hover {
+            background-color: #666;
+        }
+        #sticker {
+            margin-top: 30px;
+            width: 200px;
+            display: none;
+        }
+        audio {
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>¿Quieres ser mi San Valentín? ❤️</h1>
+        <h2>Att: René</h2>
+        
+        <div class="buttons">
+            <button class="yes" onclick="showSticker('yes')">Sí 💖</button>
+            <button class="no" onclick="showSticker('no')">No 💔</button>
+        </div>
+
+        <img id="sticker" src="" alt="Sticker">
+        <audio id="song" controls></audio>
+    </div>
+
+    <script>
+        function showSticker(answer) {
+            var sticker = document.getElementById("sticker");
+            var audio = document.getElementById("song");
+
+            if (answer === 'yes') {
+                sticker.src = "https://media.giphy.com/media/3ohs4BSacFKI7A717y/giphy.gif"; // Sticker feliz
+                audio.src = "https://www.mfiles.co.uk/mp3-downloads/flower-duet.mp3"; // Canción romántica (puedes cambiarla)
+            } else {
+                sticker.src = "https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif"; // Sticker triste
+                audio.src = "https://www.mfiles.co.uk/mp3-downloads/moonlight-sonata.mp3"; // Canción triste (puedes cambiarla)
+            }
+            
+            sticker.style.display = "block";
+            audio.style.display = "block";
+            audio.play();
+        }
+    </script>
+
+</body>
+</html>
